@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfraDevMeetup от VK Tech | InfraDev Meetup #1</title>
+    <meta name="description" content="Первый митап по инфраструктурной разработке. Доклады о SDS, Ceph, SDN OpenStack Neutron.">
+
+    <!-- Open Graph для соцсетей -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="InfraDevMeetup #1 | InfraDev Meetup">
+    <meta property="og:description" content="Первый митап по инфраструктурной разработке. Доклады о SDS, Ceph, SDN OpenStack Neutron.">
+    <meta property="og:image" content="../img/1.jpg">
+    <meta property="og:url" content="https://infradevs.ru/meetups/1.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="InfraDevMeetup #1 | InfraDev Meetup">
+    <meta name="twitter:description" content="Первый митап по инфраструктурной разработке. Доклады о SDS, Ceph, SDN OpenStack Neutron.">
+    <meta name="twitter:image" content="../img/1.jpg">
+
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="logo">InfraDev</a>
+                <button class="menu-toggle" aria-label="Открыть меню" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="../">Главная</a></li>
+                    <li><a href="../#meetups">Митапы</a></li>
+                    <li><a href="../cfp.html">Стать спикером</a></li>
+                    <li><a href="https://t.me/infradevcommunity" target="_blank">Telegram</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="meetup-header">
+            <div class="container">
+                <p class="date">26 марта 2025</p>
+                <h1>InfraDevMeetup от VK Tech</h1>
+                <p class="meetup-subtitle">InfraDev Meetup #1 — первый митап серии</p>
+                <div class="video-embed">
+                    <iframe src="https://vk.com/video_ext.php?oid=-208050206&id=456239033&hd=2&autoplay=0" width="100%" height="400" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <img src="../img/1.jpg" alt="InfraDevMeetup #1" class="meetup-header-image">
+            </div>
+        </section>
+
+        <section class="meetup-content">
+            <div class="container">
+                <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: 2rem;">
+                    Первый митап, посвящённый разработке и эксплуатации инфраструктурных платформ. Хардовые доклады от спикеров из VK Tech, Selectel, Wildberries и Kaspersky.
+                </p>
+
+                <article class="talk">
+                    <h3>SDS для самых маленьких</h3>
+                    <span class="speaker">Василий Степанов, руководитель команды разработки Storage, VK Cloud</span>
+                    <p class="description">
+                        «Хорошее облако не построить без хорошего SDS. А как выбрать SDS для собственного облака? Из чего/как выбрать SDS для облака? Есть ли жизнь вообще без SDS? Как устроены SDS в общем?<br><br>
+                        На эти и другие вопросы мы ответим в нашем докладе, а ещё посмотрим на стандартные ходовые архитектуры хранилищ, их масштабируемость и применимость».
+                    </p>
+                </article>
+
+                <article class="talk">
+                    <h3>Мастер-класс: «Восставший из пепла, или Как спасти самое важное, когда Ceph лёг на дно»</h3>
+                    <span class="speaker">Артемий Капитула, техлид группы разработки систем хранения, Wildberries</span>
+                    <p class="description">
+                        «Когда случается отказ — это плохо. Если происходит отказ СХД — это уже авария. А если отказ не удаётся устранить и всё идёт к потере данных — это уже катастрофа. Можно ли спасти данные клиентов, когда Ceph «лёг на дно и дальше не поплывёт»?<br><br>
+                        Узнаем, какие инструменты есть, чтобы сохранить данные, как их можно использовать, и что можно спасти из кластера Ceph. Извлечём данные из мертвого кластера — почти так же, как это уже делали, но «в прямом эфире» (с ноутбука докладчика) и рассказом».
+                    </p>
+                </article>
+
+                <article class="talk">
+                    <h3>Небольшой сбой в RabbitMQ с большими последствиями. Опыт эксплуатации SDN OpenStack Neutron</h3>
+                    <span class="speaker">Александр Шишебаров, ведущий разработчик, Selectel</span>
+                    <p class="description">
+                        «Даже при кратковременном сбое RabbitMQ может значительно повлиять на работу Neutron и других компонентов OpenStack.<br><br>
+                        В докладе расскажу, с какими проблемами мы столкнулись при масштабировании OpenStack Neutron, поделюсь опытом эксплуатации данного SDN и доработки его компонентов. Попутно проедемся по устройству Neutron SDN с драйвером OpenvSwitch».
+                    </p>
+                </article>
+
+                <article class="talk">
+                    <h3>Что делать, когда автотестам требуется свой датацентр?</h3>
+                    <span class="speaker">Александр Крымов, старший разработчик, Hive Test Infrastructure Development, Kaspersky</span>
+                    <p class="description">
+                        «Так бывает, что ваши автотесты выросли, научились снимать и откатывать снапшоты, эмулировать сетевые атаки, ронять машины в BSOD, а запускаться им каждый раз нужно на различных провайдерах виртуализации. Как эффективно утилизировать ресурсы в кластере на двадцать тысяч агентов, не привлекая внимание санитаров?<br><br>
+                        В докладе мы поговорим об оркестраторе Hive собственной разработки Лаборатории Касперского. Познакомимся с масштабной автотестовой инфраструктурой и различными подходами к переиспользованию железных ресурсов. Разберем эвристический алгоритм, который на основе ретроспективной статистики и показателях производительности агентов строит оптимальный план распределения задач. Рассмотрим цифры и примеры, демонстрирующие результаты внедрения решения».
+                    </p>
+                </article>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="../" class="btn btn-secondary">← На главную</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>InfraDev Meetup — митапы по инфраструктурной разработке</p>
+                </div>
+                <div class="footer-right">
+                    <a href="https://t.me/infradevcommunity" target="_blank">Telegram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
