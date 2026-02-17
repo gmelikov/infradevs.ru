@@ -9,7 +9,7 @@ function CFPPage() {
         </p>
 
         <div className="topics">
-          <h3>🔍 Ищем доклады на темы:</h3>
+          <h3>🔍 Пример интересующих тем:</h3>
           <ul>
             <li>SDN (Software-Defined Networking) — разработка, эксплуатация, опыт внедрения</li>
             <li>SDS (Software-Defined Storage) — хранилища, Ceph, архитектуры</li>
@@ -34,11 +34,11 @@ function CFPPage() {
 
         <div className="cfp-form" style={{ textAlign: 'center', padding: '3rem 2rem' }}>
           <p style={{ fontSize: '1.1rem', marginBottom: '2rem', color: 'var(--color-text)' }}>
-            Заполните форму заявки на anketolog.ru
+            Заполните форму заявки
           </p>
 
           <a
-            href="https://anketolog.ru/"
+            href="https://anketolog.ru/service/survey/fill/direct/988007/XLXsvOv2"
             className="btn btn-primary btn-large"
             target="_blank"
             rel="noopener noreferrer"
