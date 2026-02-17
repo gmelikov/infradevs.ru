@@ -470,6 +470,40 @@ section h2 {
   line-height: 1.7;
 }
 
+/* Not Found Page */
+.not-found {
+  padding: 10rem 0 6rem;
+  text-align: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+.not-found-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.not-found h1 {
+  font-family: var(--font-mono);
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.not-found-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.not-found-description {
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+}
+
 /* CFP Page */
 .cfp-content {
   max-width: 700px;

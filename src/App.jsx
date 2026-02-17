@@ -4,6 +4,7 @@ import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
 import MeetupPage from './pages/MeetupPage';
 import CFPPage from './pages/CFPPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/meetup/:id" element={<MeetupPage />} />
           <Route path="/cfp" element={<CFPPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>
