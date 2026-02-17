@@ -1,56 +1,81 @@
-# InfraDev Meetup Website
+# InfraDev Meetup
 
 Сайт для серии митапов по инфраструктурной разработке — от разработчиков для разработчиков.
 
-**Адрес:** infradevs.ru
+## Технологии
 
-## Структура сайта
+- **React 19** + **Vite** — современный фронтенд
+- **React Router** — клиентская маршрутизация
+- **GitHub Actions** — автоматический деплой на GitHub Pages
+
+## Структура проекта
 
 ```
-/
-├── index.html          # Главная страница с общей информацией
-├── cfp.html            # Call for Papers — подача заявок
-├── styles.css          # Единый файл стилей
-├── meetups/            # Страницы отдельных митапов
+├── .github/workflows/    # CI/CD для GitHub Pages
+├── public/               # Статические файлы (картинки)
+│   └── img/
+├── src/
+│   ├── components/       # React компоненты
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   └── Layout.jsx
+│   ├── pages/            # Страницы
+│   │   ├── HomePage.jsx
+│   │   ├── MeetupPage.jsx
+│   │   └── CFPPage.jsx
+│   ├── App.jsx           # Роутер
+│   ├── index.css         # Стили
+│   └── main.jsx          # Entry point
+├── index.html
+└── vite.config.js
 ```
 
-## Как добавить новый митап
+## Локальная разработка
 
-### 1. Создайте страницу митапа
-
-Создайте файл `meetups/N.html` (где N — номер митапа), скопировав структуру из существующего.
-
-### 2. Добавьте карточку на главную
-
-В `index.html` найдите блок `<div class="meetups-list">` и добавьте новую карточку в начало, скопировав другую (новейшие сверху).
-
-### 3. Классы для статуса митапа
-
-- `meetup-upcoming` — предстоящий митап (будет выделен визуально)
-- `meetup-past` — прошедший митап
-- `meetup-current` — текущий/активный митап
-
-## Как настроить форму CFP
-
-В файле `cfp.html` найдите форму:
-
-```html
-<form action="https://YOUR_FORM_ID" method="POST">
+```bash
+npm install
+npm run dev
 ```
 
-## Дизайн и стили
+## Сборка для продакшена
 
-### Цветовая схема
+```bash
+npm run build
+```
 
-Все цвета определены в CSS-переменных в `styles.css`.
+## Деплой
 
-### Адаптивность
+Деплой происходит автоматически при пуше в ветку `main` через GitHub Actions.
 
-Сайт адаптирован под мобильные устройства:
-- Desktop: полная версия
-- Tablet (< 768px): адаптированная сетка
-- Mobile (< 480px): компактная версия
+## Добавление нового митапа
+
+1. Отредактируй `src/pages/MeetupPage.jsx` — добавь данные митапа в объект `meetupsData`
+2. Добавь картинку митапа в `public/img/`
+3. Обнови список на главной в `src/pages/HomePage.jsx`
+
+Пример добавления митапа:
+
+```javascript
+const meetupsData = {
+  5: {
+    date: '15 марта 2026',
+    title: 'Название митапа',
+    subtitle: 'Подзаголовок',
+    videoId: '123456789', // ID видео VK
+    image: '/img/5.jpg',
+    photoUrl: 'https://vk.com/album-...',
+    description: 'Описание митапа',
+    talks: [
+      {
+        title: 'Название доклада',
+        speaker: 'Имя спикера, компания',
+        description: 'Описание доклада',
+      },
+    ],
+  },
+};
+```
 
 ## Лицензия
 
-Свободное использование для нужд сообщества InfraDev Meetup.
+MIT
