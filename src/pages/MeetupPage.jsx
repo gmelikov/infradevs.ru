@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const meetupsData = {
   1: {
@@ -112,6 +113,76 @@ const meetupsData = {
   },
 };
 
+function VideoEmbed({ videoId }) {
+  const [isLoading, setIsLoading] = useState(true);
+  const videoUrl = `https://vk.com/video_ext.php?oid=-208050206&id=${videoId}&hd=2&autoplay=0`;
+  const vkVideoUrl = `https://vk.com/video-208050206_${videoId}`;
+
+  return (
+    <div style={{ marginBottom: '1.5rem' }}>
+      <div
+        className="video-embed"
+        style={{
+          position: 'relative',
+          backgroundColor: 'var(--color-card)',
+          borderRadius: '12px',
+          overflow: 'hidden'
+        }}
+      >
+        {isLoading && (
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: 'var(--color-card)',
+              border: '2px dashed var(--color-border)',
+              borderRadius: '12px',
+              zIndex: 1
+            }}
+          >
+            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎬</div>
+            <p style={{ color: 'var(--color-text-secondary)', margin: 0 }}>
+              Загрузка видео...
+            </p>
+          </div>
+        )}
+        <iframe
+          src={videoUrl}
+          width="100%"
+          height="400"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+          frameBorder="0"
+          allowFullScreen
+          onLoad={() => setIsLoading(false)}
+          style={{
+            display: 'block',
+            opacity: isLoading ? 0 : 1,
+            transition: 'opacity 0.3s ease'
+          }}
+        ></iframe>
+      </div>
+      <div style={{ textAlign: 'center', marginTop: '0.75rem' }}>
+        <a
+          href={vkVideoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-secondary"
+          style={{ fontSize: '0.875rem' }}
+        >
+          🔗 Открыть видео на VK
+        </a>
+      </div>
+    </div>
+  );
+}
+
 function MeetupPage() {
   const { id } = useParams();
   const meetup = meetupsData[id];
@@ -134,16 +205,7 @@ function MeetupPage() {
           <p className="meetup-subtitle">{meetup.subtitle}</p>
 
           {!meetup.upcoming && meetup.videoId && (
-            <div className="video-embed">
-              <iframe
-                src={`https://vk.com/video_ext.php?oid=-208050206&id=${meetup.videoId}&hd=2&autoplay=0`}
-                width="100%"
-                height="400"
-                allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
-                frameBorder="0"
-                allowFullScreen
-              ></iframe>
-            </div>
+            <VideoEmbed videoId={meetup.videoId} />
           )}
 
           <img src={meetup.image} alt={meetup.title} className="meetup-header-image" />
