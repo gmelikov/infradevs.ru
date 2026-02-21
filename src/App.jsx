@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Layout from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
@@ -6,20 +6,32 @@ import MeetupPage from './pages/MeetupPage';
 import CFPPage from './pages/CFPPage';
 import NotFoundPage from './pages/NotFoundPage';
 
-function App() {
+function Root() {
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
       <Layout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/meetup/:id" element={<MeetupPage />} />
-          <Route path="/cfp" element={<CFPPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+        <Outlet />
       </Layout>
-    </BrowserRouter>
+    </>
   );
+}
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Root />,
+    children: [
+      { index: true, element: <HomePage /> },
+      { path: 'meetup/:id', element: <MeetupPage /> },
+      { path: 'cfp', element: <CFPPage /> },
+      { path: '*', element: <NotFoundPage /> },
+    ],
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
 }
 
 export default App;
