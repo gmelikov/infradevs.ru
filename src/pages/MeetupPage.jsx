@@ -7,7 +7,7 @@ const meetupsData = {
     title: 'InfraDevMeetup от VK Tech',
     subtitle: 'InfraDev Meetup #1 — первый митап серии',
     videoId: '456239033',
-    image: '/img/1.jpg',
+    image: '/img/meetup/1.jpg',
     description: 'Первый митап, посвящённый разработке и эксплуатации инфраструктурных платформ. Хардовые доклады от спикеров из VK Tech, Selectel, Wildberries и Kaspersky.',
     talks: [
       {
@@ -37,7 +37,7 @@ const meetupsData = {
     title: 'DarkSideoftheCloud',
     subtitle: 'InfraDev Meetup #2: сетевая сторона облаков',
     videoId: '456239039',
-    image: '/img/2.jpg',
+    image: '/img/meetup/2.jpg',
     photoUrl: 'https://vk.com/album-208050206_282977196',
     description: 'Специальный выпуск InfraDev Meetup про «теневую» сетевую сторону облачных сервисов. Хардовые доклады от спикеров из VK Tech и VK, Positive Technologies и K2Cloud.',
     talks: [
@@ -68,7 +68,7 @@ const meetupsData = {
     title: 'Cloud Fail ((Over))',
     subtitle: 'InfraDev Meetup #3: New Year Special',
     videoId: '456239049',
-    image: '/img/3.jpg',
+    image: '/img/meetup/3.jpg',
     photoUrl: 'https://vk.com/vkdigitaltech?z=album-208050206_311113022',
     description: 'Без фейлов не обходится ни один крутой продукт, ну а истории успеха — «за ширмой» оказываются историями поисков и ошибок с удачным концом. Поговорили про то, какие проблемы возникают под капотом инфраструктурных продуктов.',
     talks: [
@@ -93,7 +93,7 @@ const meetupsData = {
     date: '2025–2026',
     title: 'InfraDev Meetup #4',
     subtitle: 'Следующий митап — дата будет объявлена',
-    image: '/img/3.jpg',
+    image: '/img/meetup/3.jpg',
     upcoming: true,
     description: 'Проводим митапы 1–2 раза в полгода. Следите за анонсами в нашем Telegram-канале.',
     topics: [

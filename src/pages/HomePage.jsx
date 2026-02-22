@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import meetupImg from '/img/3.jpg';
+import meetupImg from '/img/meetup/3.jpg';
 
 function HomePage() {
   const meetups = [
@@ -20,7 +20,7 @@ function HomePage() {
       subtitle: 'InfraDev Meetup #3: New Year Special',
       description: 'Без фейлов не обходится ни один крутой продукт. Истории падений и героических восстановлений под капотом инфраструктурных продуктов.',
       speakers: ['Василий Степанов', 'Константин Крамлих', 'Алексей Учакин'],
-      image: '/img/3.jpg',
+      image: '/img/meetup/3.jpg',
     },
     {
       id: 2,
@@ -29,7 +29,7 @@ function HomePage() {
       subtitle: 'InfraDev Meetup #2: сетевая сторона облаков',
       description: 'Специальный выпуск про «теневую» сторону облачных сервисов: BareMetal, VPC, файрволлы, CDN.',
       speakers: ['Кирилл Фролов', 'Влад Одинцов', 'Юрий Дышлевой', 'Дмитрий Радчук'],
-      image: '/img/2.jpg',
+      image: '/img/meetup/2.jpg',
     },
     {
       id: 1,
@@ -38,7 +38,7 @@ function HomePage() {
       subtitle: 'Первый митап серии',
       description: 'SDS для самых маленьких, восстановление Ceph, SDN OpenStack Neutron и инфраструктура для автотестов.',
       speakers: ['Василий Степанов', 'Артемий Капитула', 'Александр Шишебаров', 'Александр Крымов'],
-      image: '/img/1.jpg',
+      image: '/img/meetup/1.jpg',
     },
   ];
 
@@ -46,18 +46,22 @@ function HomePage() {
     {
       name: 'Георгий Меликов',
       description: 'Founder Genesis Core, экс-руководитель IaaS в VK Cloud. Контрибьютор OpenZFS, SDN/SDS разработчик.',
+      image: '/img/pk/меликов.png',
     },
     {
       name: 'Александр Попов',
       description: 'Техлид IaaS в VK Cloud. Разработка и эксплуатация SDN-решений, автор EVPN-connector.',
+      image: '/img/pk/попов.png',
     },
     {
       name: 'Евгений Зобницев',
       description: 'CTO Factor Group, экс-руководитель эксплуатации сети магистрального оператора связи.',
+      image: '/img/pk/зобницев.png',
     },
     {
       name: 'Влад Одинцов',
       description: 'Tech Lead сетевых сервисов K2 Cloud. Контрибьютор Open vSwitch, OVN, создатель OVS/OVN russian community.',
+      image: '/img/pk/одинцов.png',
     },
   ];
 
@@ -145,6 +149,7 @@ function HomePage() {
           <div className="committee-grid">
             {committee.map((member, idx) => (
               <div key={idx} className="committee-member">
+                <img src={member.image} alt={member.name} className="committee-photo" />
                 <h3>{member.name}</h3>
                 <p>{member.description}</p>
               </div>
