@@ -383,6 +383,41 @@ section h2 {
   color: var(--color-text-secondary);
 }
 
+/* Organizers */
+.organizers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.organizer-member {
+  padding: 1.5rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.organizer-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid var(--color-accent-light);
+}
+
+.organizer-member h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-accent-light);
+}
+
+.organizer-member p {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
 /* CTA */
 .cta {
   text-align: center;

@@ -65,6 +65,24 @@ function HomePage() {
     },
   ];
 
+  const organizers = [
+    {
+      name: 'Настасья Распономарёва',
+      description: 'VK Tech',
+      image: '/img/orgs/распономарёва.png',
+    },
+    {
+      name: 'Егор Еремин',
+      description: 'VK Tech',
+      image: '/img/orgs/еремин.png',
+    },
+    {
+      name: 'Надежда Блау',
+      description: 'VK Tech',
+      image: '/img/orgs/блау.png',
+    },
+  ];
+
   return (
     <>
       {/* Hero Section */}
@@ -152,6 +170,22 @@ function HomePage() {
                 <img src={member.image} alt={member.name} className="committee-photo" />
                 <h3>{member.name}</h3>
                 <p>{member.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Organizers Section */}
+      <section className="organizers" id="organizers">
+        <div className="container">
+          <h2>Организаторы</h2>
+          <div className="organizers-grid">
+            {organizers.map((organizer, idx) => (
+              <div key={idx} className="organizer-member">
+                <img src={organizer.image} alt={organizer.name} className="organizer-photo" />
+                <h3>{organizer.name}</h3>
+                <p>{organizer.description}</p>
               </div>
             ))}
           </div>
