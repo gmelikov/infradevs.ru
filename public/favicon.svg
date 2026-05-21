@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Тёмно-синий фон как на сайте -->
+  <circle cx="256" cy="256" r="240" fill="#0f172a"/>
+
+  <!-- Неоновое кольцо -->
+  <circle cx="256" cy="256" r="224" stroke="#06b6d4" stroke-width="28" fill="none"/>
+
+  <!-- Упрощённое облако сверху (толстая линия) -->
+  <path d="M120 240 Q120 160 190 160 Q220 120 290 120 Q370 120 370 200 Q370 240 330 240" 
+        fill="none" stroke="#22d3ee" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Упрощённый сервер — две полосы снизу -->
+  <rect x="110" y="300" width="292" height="44" rx="12" fill="none" stroke="#22d3ee" stroke-width="28"/>
+  <rect x="110" y="380" width="292" height="44" rx="12" fill="none" stroke="#22d3ee" stroke-width="28"/>
+
+  <!-- Крупный текст "In" по центру -->
+  <text x="256" y="268" font-family="Arial Black, Arial, sans-serif" font-size="170" 
+        font-weight="900" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">In</text>
+</svg>

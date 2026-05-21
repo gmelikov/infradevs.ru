@@ -5,13 +5,12 @@ function HomePage() {
   const meetups = [
     {
       id: 4,
-      date: '2025–2026',
-      title: 'InfraDev Meetup #4',
-      subtitle: 'Следующий митап — дата будет объявлена',
-      description: 'Готовим следующий митап по инфраструктурной разработке. 1–2 раза в полгода.',
-      speakers: ['📅 Следите за анонсами'],
-      image: meetupImg,
-      upcoming: true,
+      date: '10 июня 2025',
+      title: 'Summer Edition: про AI и не только',
+      subtitle: 'InfraDev Meetup #4: Summer Edition: про AI и не только',
+      description: 'Прямо сейчас мы наблюдаем как AI в SDLC меняет процесс разработки — об удачных примерах и кейсах поговорим в этот раз. Обсудим, как разрабатывать инфраструктурные сервисы с помощью AI и как построить MLOps-платформу для обучения моделей.',
+      speakers: ['Кирилл Фролов', 'Павел Шипилов', 'Александр Александров'],
+      image: '/img/meetup/4.jpg',
     },
     {
       id: 3,
@@ -45,7 +44,7 @@ function HomePage() {
   const committee = [
     {
       name: 'Георгий Меликов',
-      description: 'Founder Genesis Core, экс-руководитель IaaS в VK Cloud. Контрибьютор OpenZFS, SDN/SDS разработчик.',
+      description: 'Founder @ Exordos (former Genesis Core), экс-руководитель IaaS в VK Cloud. Контрибьютор OpenZFS, SDN/SDS разработчик.',
       image: '/img/pk/меликов.png',
     },
     {
