@@ -4,8 +4,18 @@ import meetupImg from '/img/meetup/3.jpg';
 function HomePage() {
   const meetups = [
     {
+      id: 5,
+      date: 'Q4 2026',
+      title: 'InfraDev Meetup #5',
+      subtitle: 'Следующий митап — дата будет объявлена',
+      description: 'Готовим следующий митап по инфраструктурной разработке. 1–2 раза в полгода.',
+      speakers: ['📅 Следите за анонсами'],
+      image: meetupImg,
+      upcoming: true,
+    },
+    {
       id: 4,
-      date: '10 июня 2025',
+      date: '10 июня 2026',
       title: 'Summer Edition: про AI и не только',
       subtitle: 'InfraDev Meetup #4: Summer Edition: про AI и не только',
       description: 'Прямо сейчас мы наблюдаем как AI в SDLC меняет процесс разработки — об удачных примерах и кейсах поговорим в этот раз. Обсудим, как разрабатывать инфраструктурные сервисы с помощью AI и как построить MLOps-платформу для обучения моделей.',

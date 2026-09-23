@@ -90,11 +90,12 @@ const meetupsData = {
     ],
   },
   4: {
-    date: '10 июня 2025',
+    date: '10 июня 2026',
     title: 'Summer Edition: про AI и не только',
     subtitle: 'InfraDev Meetup #4: Summer Edition: про AI и не только',
+    videoOwnerId: '239259953',
+    videoId: '456239025',
     image: '/img/meetup/4.jpg',
-    registrationUrl: 'https://team.vk.company/events/1455/',
     description: 'Прямо сейчас мы наблюдаем как AI в SDLC меняет процесс разработки — об удачных примерах и кейсах поговорим в этот раз. Обсудим, как разрабатывать инфраструктурные сервисы с помощью AI и как построить MLOps-платформу для обучения моделей. И не только: пока AI не перестроил DevOps-цикл, классические вызовы сборки образов для виртуальных машин остаются актуальными.',
     talks: [
       {
@@ -114,12 +115,33 @@ const meetupsData = {
       },
     ],
   },
+  5: {
+    date: 'Q4 2026',
+    title: 'InfraDev Meetup #5',
+    subtitle: 'Следующий митап — дата будет объявлена',
+    upcoming: true,
+    description: 'Проводим митапы 1–2 раза в полгода. Следите за анонсами в нашем Telegram-канале.',
+    topics: [
+      'SDN/SDS — разработка, эксплуатация, опыт внедрения',
+      'Compute — виртуализация, контейнеры, оркестрация',
+      'Истории падений и восстановлений',
+      'Локальная инфраструктура vs облака',
+      'Автоматизация инфраструктурных задач',
+      'Дизайн систем на отказ',
+      'Масштабирование — от "ноутбука" до датацентра',
+    ],
+    format: [
+      '3–4 доклада по 30 минут + 10 минут на вопросы',
+      'Офлайн в Москве (100+ человек) + онлайн-трансляция',
+      'Афтепати с нетворкингом и пивом 🍺',
+    ],
+  },
 };
 
-function VideoEmbed({ videoId }) {
+function VideoEmbed({ videoId, ownerId = '208050206' }) {
   const [isLoading, setIsLoading] = useState(true);
-  const videoUrl = `https://vk.com/video_ext.php?oid=-208050206&id=${videoId}&hd=2&autoplay=0`;
-  const vkVideoUrl = `https://vk.com/video-208050206_${videoId}`;
+  const videoUrl = `https://vk.com/video_ext.php?oid=-${ownerId}&id=${videoId}&hd=2&autoplay=0`;
+  const vkVideoUrl = `https://vkvideo.ru/video-${ownerId}_${videoId}`;
 
   return (
     <div style={{ marginBottom: '1.5rem' }}>
@@ -208,10 +230,16 @@ function MeetupPage() {
           <p className="meetup-subtitle">{meetup.subtitle}</p>
 
           {!meetup.upcoming && meetup.videoId && (
-            <VideoEmbed videoId={meetup.videoId} />
+            <VideoEmbed videoId={meetup.videoId} ownerId={meetup.videoOwnerId} />
           )}
 
-          <img src={meetup.image} alt={meetup.title} className="meetup-header-image" />
+          {meetup.image ? (
+            <img src={meetup.image} alt={meetup.title} className="meetup-header-image" />
+          ) : (
+            <div className="meetup-header-image meetup-image stay-tuned">
+              <span>🔜 Stay Tuned</span>
+            </div>
+          )}
 
           <div style={{ marginTop: '1.5rem', textAlign: 'center', display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
             {meetup.registrationUrl && (
